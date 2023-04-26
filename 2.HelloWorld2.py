@@ -1,6 +1,0 @@
-print('I like "pizza"')
-print("'I Like' pizza")
-print('*' * 10)
-print('+' * 5)
-print('$' == 10)
-print('#' != 2)
