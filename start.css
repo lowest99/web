@@ -1,0 +1,152 @@
+:root {
+	--primary: #B6895b;
+	--bg: #010101;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--bg);
+	color: white;
+}
+
+.home {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 5%;
+	background-color: black;
+	border-bottom: 0.5px solid white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+
+.home .logo {
+	font-style: revert-layer;
+	font-size: 28px;
+	font-weight: 500;
+	color: white;
+}
+
+.home .logo:hover {
+	color: darkred;
+}
+
+.home .logo span {
+	color: darkred;
+}
+
+.home .nav-list {
+	display: inline-block;
+	justify-content: space-between;
+	position: fixed;
+	align-items: center;
+	margin: 0.5rem 5%;
+	right: 0;
+}
+
+.home .nav-list a {
+	font-style: revert-layer;
+	color: white;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0 1rem;
+}
+
+.home .nav-list a:hover {
+	color: darkred;
+}
+
+
+.home .nav-list a::after {
+	content: "";
+	display: block;
+	bottom: 0.5 rem;
+	border-bottom: 0.1rem solid darkred;
+	transform: scaleX(0);
+	transition: 0.2s linear;
+}
+
+.home .nav-list a:hover::after {
+	transform: scaleX(1);
+}
+
+.home .nav-icon a {
+	color: white;
+	margin: 0.1rem;
+}
+
+.home .nav-icon a:hover {
+	color: darkred;
+}
+
+#menu-icon {
+	display: none;
+}
+
+/*Media Queries*/
+/*Laptop*/
+@media (max-width: 1366px) {
+	html {
+		font-size: 75%;
+	}
+}
+
+/*Tablet*/
+@media (max-width: 768px) {
+	html {
+		font-size: 62.5%;
+	}
+}
+
+/*Mobile Phone*/
+@media (max-width: 657px) {
+	html {
+		font-size: 55%;
+	}
+
+	#menu-icon {
+		display: inline-block;
+	}
+
+	.home .nav-list {
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		background-color: white;
+		width: 23rem;
+		height: auto;
+		transition: 0.3s;
+	}
+
+	.home .nav-list a {
+		color: black;
+		display: block;
+		margin: 1.5rem;
+		padding: 0.5rem;
+		font-size: 2rem;
+	}
+
+	.home .nav-list a:hover {
+	color: darkred;
+	}
+
+	.home .nav-list a::after {
+		transform-origin: 0.0;
+	}
+
+	.home .nav-list.active {
+		right: 0;
+	}
+}
